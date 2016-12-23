@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+
+            <trans-unit id="app.welcome">
+                <source>app.welcome</source>
+                <target>Welcome to Jedy</target>
+            </trans-unit>
+            <trans-unit id="app.description">
+                <source>app.description</source>
+                <target>A "small"<![CDATA[<i class="fa fa-hand-lizard-o"></i>]]> CMS for multi-language Web sites created with Symfony3</target>
+            </trans-unit>
+            <trans-unit id="app.view.project">
+                <source>app.view.project</source>
+                <target>View the project</target>
+            </trans-unit>
+            <trans-unit id="app.translation">
+                <source>app.translation</source>
+                <target>Translation</target>
+            </trans-unit>
+            <trans-unit id="app.translations">
+                <source>app.translations</source>
+                <target>Translations</target>
+            </trans-unit>
+            <trans-unit id="app.translation.edit">
+                <source>app.translation.edit</source>
+                <target>Edit translation</target>
+            </trans-unit>
+            <trans-unit id="app.translation.add">
+                <source>app.translation.add</source>
+                <target>Add translation</target>
+            </trans-unit>
+            <trans-unit id="app.edit">
+                <source>app.edit</source>
+                <target>Edit</target>
+            </trans-unit>
+            <trans-unit id="app.delete">
+                <source>app.delete</source>
+                <target>Delete</target>
+            </trans-unit>
+            <trans-unit id="app.actions">
+                <source>app.actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="app.language">
+                <source>app.language</source>
+                <target>Language</target>
+            </trans-unit>
+            <trans-unit id="app.pagination.older">
+                <source>app.pagination.older</source>
+                <target>Older</target>
+            </trans-unit>
+            <trans-unit id="app.pagination.newer">
+                <source>app.pagination.newer</source>
+                <target>Newer</target>
+            </trans-unit>
+            <trans-unit id="app.administration">
+                <source>app.administration</source>
+                <target>Administration</target>
+            </trans-unit>
+            <trans-unit id="app.profile">
+                <source>app.profile</source>
+                <target>Perfíl</target>
+            </trans-unit>
+            <trans-unit id="app.visit.website">
+                <source>app.visit.website</source>
+                <target>Visit website</target>
+            </trans-unit>
+            <trans-unit id="app.close.session">
+                <source>app.close.session</source>
+                <target>Close session</target>
+            </trans-unit>
+            <trans-unit id="app.private">
+                <source>app.private</source>
+                <target>Private</target>
+            </trans-unit>
+            <trans-unit id="app.website">
+                <source>app.website</source>
+                <target>Author website</target>
+            </trans-unit>
+            <trans-unit id="app.about">
+                <source>app.about</source>
+                <target>About</target>
+            </trans-unit>
+            <trans-unit id="app.github">
+                <source>app.github</source>
+                <target>Github project</target>
+            </trans-unit>
+            <trans-unit id="app.read.more">
+                <source>app.read.more</source>
+                <target>Read more</target>
+            </trans-unit>
+            <trans-unit id="app.404.title">
+                <source>app.404.title</source>
+                <target>Page not found</target>
+            </trans-unit>
+            <trans-unit id="app.404.message">
+                <source>app.404.message</source>
+                <target>The requested page couldn't be located</target>
+            </trans-unit>
+            <trans-unit id="app.error.home">
+                <source>app.error.home</source>
+                <target>Return to home</target>
+            </trans-unit>
+
+            <trans-unit id="category.title.singular">
+                <source>category.title.singular</source>
+                <target>Category</target>
+            </trans-unit>
+            <trans-unit id="category.title.plural">
+                <source>category.title.plural</source>
+                <target>Categories</target>
+            </trans-unit>
+            <trans-unit id="category.add">
+                <source>category.add</source>
+                <target>Add category</target>
+            </trans-unit>
+            <trans-unit id="category.edit">
+                <source>category.edit</source>
+                <target>Edit category</target>
+            </trans-unit>
+            <trans-unit id="category.translation.add">
+                <source>category.translation.add</source>
+                <target>Add translation to category</target>
+            </trans-unit>
+            <trans-unit id="category.name">
+                <source>category.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="category.description">
+                <source>category.description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="category.parent">
+                <source>category.parent</source>
+                <target>Does it have a parent category?</target>
+            </trans-unit>
+            <trans-unit id="category.parent.select">
+                <source>category.parent.select</source>
+                <target>Select a parent category</target>
+            </trans-unit>
+            <trans-unit id="category.flash.created">
+                <source>category.flash.created</source>
+                <target>The category was created</target>
+            </trans-unit>
+            <trans-unit id="category.flash.edited">
+                <source>category.flash.edited</source>
+                <target>The category was edited</target>
+            </trans-unit>
+            <trans-unit id="category.flash.deleted">
+                <source>category.flash.deleted</source>
+                <target>The category was deleted</target>
+            </trans-unit>
+            <trans-unit id="category.flash.deleted.children">
+                <source>category.flash.deleted.children</source>
+                <target>I can not delete this category because it has associated content</target>
+            </trans-unit>
+            <trans-unit id="category.flash.translation.created">
+                <source>category.flash.translation.created</source>
+                <target>Translation category was created</target>
+            </trans-unit>
+            <trans-unit id="category.flash.translation.edited">
+                <source>category.flash.translation.edited</source>
+                <target>Translation category was edited</target>
+            </trans-unit>
+            <trans-unit id="category.definition">
+                <source>category.definition</source>
+                <target>Each entry is classified under a category. this allows organizing the information as contents</target>
+            </trans-unit>
+            
+            <trans-unit id="content.title.singular">
+                <source>content.title.singular</source>
+                <target>Content</target>
+            </trans-unit>
+            <trans-unit id="content.title.plural">
+                <source>content.title.plural</source>
+                <target>Contents</target>
+            </trans-unit>
+            <trans-unit id="content.type">
+                <source>content.type</source>
+                <target>Type</target>
+            </trans-unit>
+            <trans-unit id="content.type.page">
+                <source>content.type.page</source>
+                <target>Page</target>
+            </trans-unit>
+            <trans-unit id="content.type.post">
+                <source>content.type.post</source>
+                <target>Post</target>
+            </trans-unit>
+            <trans-unit id="content.type.all">
+                <source>content.type.all</source>
+                <target></target>
+            </trans-unit>
+            <trans-unit id="content.see.all">
+                <source>content.see.all</source>
+                <target>See all</target>
+            </trans-unit>
+            <trans-unit id="content.add">
+                <source>content.add</source>
+                <target>Add content</target>
+            </trans-unit>
+            <trans-unit id="content.edit">
+                <source>content.edit</source>
+                <target>Edit content</target>
+            </trans-unit>
+            <trans-unit id="content.translation.add">
+                <source>content.translation.add</source>
+                <target>Add translation to content</target>
+            </trans-unit>
+            <trans-unit id="content.title">
+                <source>content.title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="content.summary">
+                <source>content.summary</source>
+                <target>Summary</target>
+            </trans-unit>
+            <trans-unit id="content.content">
+                <source>content.content</source>
+                <target>Content</target>
+            </trans-unit>
+            <trans-unit id="content.published">
+                <source>content.published</source>
+                <target>Do you want to publish it?</target>
+            </trans-unit>
+            <trans-unit id="content.category">
+                <source>content.category</source>
+                <target>Does it have a category?</target>
+            </trans-unit>
+            <trans-unit id="content.category.select">
+                <source>content.category.select</source>
+                <target>Select a category for content</target>
+            </trans-unit>
+            <trans-unit id="content.flash.created">
+                <source>content.flash.created</source>
+                <target>The content was created</target>
+            </trans-unit>
+            <trans-unit id="content.flash.edited">
+                <source>content.flash.edited</source>
+                <target>The content was edited</target>
+            </trans-unit>
+            <trans-unit id="content.flash.deleted">
+                <source>content.flash.deleted</source>
+                <target>The content was deleted</target>
+            </trans-unit>
+            <trans-unit id="content.flash.translation.created">
+                <source>content.flash.translation.created</source>
+                <target>Translation content was created</target>
+            </trans-unit>
+            <trans-unit id="content.flash.translation.edited">
+                <source>content.flash.translation.edited</source>
+                <target>Translation content was edited</target>
+            </trans-unit>
+            <trans-unit id="content.definition.page">
+                <source>content.definition.page</source>
+                <target>"Static" contents normally used to display general information about your site.</target>
+            </trans-unit>
+            <trans-unit id="content.definition.post">
+                <source>content.definition.post</source>
+                <target>Articles that appear to visitors in reverse chronological order.</target>
+            </trans-unit>
+
+            <trans-unit id="nav.title.singular">
+                <source>nav.title.singular</source>
+                <target>Navigation</target>
+            </trans-unit>
+            <trans-unit id="nav.title.plural">
+                <source>nav.title.plural</source>
+                <target>Navigations</target>
+            </trans-unit>
+            <trans-unit id="nav.add">
+                <source>nav.add</source>
+                <target>Add nav</target>
+            </trans-unit>
+            <trans-unit id="nav.there.not">
+                <source>nav.there.not</source>
+                <target>There are not contents</target>
+            </trans-unit>
+            <trans-unit id="nav.edit">
+                <source>nav.edit</source>
+                <target>Edit nav</target>
+            </trans-unit>
+            <trans-unit id="nav.translation.add">
+                <source>nav.translation.add</source>
+                <target>Add translation to nav</target>
+            </trans-unit>
+            <trans-unit id="nav.id">
+                <source>nav.id</source>
+                <target>Id navigation</target>
+            </trans-unit>
+            <trans-unit id="nav.name">
+                <source>nav.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="nav.parent">
+                <source>nav.parent</source>
+                <target>Does it have a parent nav?</target>
+            </trans-unit>
+            <trans-unit id="nav.parent.select">
+                <source>nav.parent.select</source>
+                <target>Select a parent nav</target>
+            </trans-unit>
+            <trans-unit id="nav.sort">
+                <source>nav.sort</source>
+                <target>Sort</target>
+            </trans-unit>
+            <trans-unit id="nav.flash.created">
+                <source>nav.flash.created</source>
+                <target>The navigation was created</target>
+            </trans-unit>
+            <trans-unit id="nav.flash.edited">
+                <source>nav.flash.edited</source>
+                <target>The navigation was edited</target>
+            </trans-unit>
+            <trans-unit id="nav.flash.deleted">
+                <source>nav.flash.deleted</source>
+                <target>The navigation was deleted</target>
+            </trans-unit>
+            <trans-unit id="nav.flash.translation.generated">
+                <source>nav.flash.translation.generated</source>
+                <target>Translation navigation was generated</target>
+            </trans-unit>
+            <trans-unit id="nav.flash.translation.updated">
+                <source>nav.flash.translation.updated</source>
+                <target>Translation navigation was updated</target>
+            </trans-unit>
+            <trans-unit id="nav.flash.exists">
+                <source>nav.flash.exists</source>
+                <target>This element exists</target>
+            </trans-unit>
+            <trans-unit id="nav.translation.update">
+                <source>nav.translation.update</source>
+                <target>Update translation</target>
+            </trans-unit>
+            <trans-unit id="nav.translation.generate">
+                <source>nav.translation.generate</source>
+                <target>Generate translation</target>
+            </trans-unit>
+            <trans-unit id="nav.category.add">
+                <source>nav.category.add</source>
+                <target>Add category to the navitation</target>
+            </trans-unit>
+            <trans-unit id="nav.category.select">
+                <source>nav.category.select</source>
+                <target>Select a category for add</target>
+            </trans-unit>
+            <trans-unit id="nav.page.add">
+                <source>nav.page.add</source>
+                <target>Add page to the navitation</target>
+            </trans-unit>
+            <trans-unit id="nav.page.select">
+                <source>nav.page.select</source>
+                <target>Select a page for add</target>
+            </trans-unit>
+            
+            <trans-unit id="file.title.singular">
+                <source>file.title.singular</source>
+                <target>File</target>
+            </trans-unit>
+            <trans-unit id="file.title.plural">
+                <source>file.title.plural</source>
+                <target>Files</target>
+            </trans-unit>
+            <trans-unit id="file.add">
+                <source>file.add</source>
+                <target>Add file</target>
+            </trans-unit>
+            <trans-unit id="file.name">
+                <source>file.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="file.view">
+                <source>file.view</source>
+                <target>View</target>
+            </trans-unit>
+            <trans-unit id="file.details">
+                <source>file.details</source>
+                <target>Details</target>
+            </trans-unit>
+            <trans-unit id="file.upload">
+                <source>file.upload</source>
+                <target>Upload file</target>
+            </trans-unit>
+            <trans-unit id="file.flash.created">
+                <source>file.flash.created</source>
+                <target>The file was uploaded</target>
+            </trans-unit>
+            <trans-unit id="file.flash.deleted">
+                <source>file.flash.deleted</source>
+                <target>The file was deleted</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

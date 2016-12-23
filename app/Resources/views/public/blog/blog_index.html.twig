@@ -1,0 +1,38 @@
+{% extends 'public/base_public.html.twig' %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>Blog</h1>
+    </div>
+
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-xs-12">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.summary }}</p>
+                <span>{{ post.publishedAt|localizeddate('medium', 'short') }}</span>
+                <p><a class="btn btn-default" href="{{ path('app_blog_post', {'_locale': post.locale, 'slugcategory': post.category.slug ,'slug': post.slug}) }}" role="button">{{ 'app.read.more'|trans }} &raquo;</a></p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <ul class="pager">
+        {% set prev = page -1  %}
+
+        {% if prev != 0 %}
+            <li class="previous"><a href="{{ path('app_blog_index_paginated', {'page': prev}) }}">&larr; Older</a></li>
+        {% else %}
+            <li class="previous disabled"><a href="">&larr; Older</a></li>
+        {% endif %}
+
+        {% if totalPages >= (page+1) %}
+            <li class="next"><a href="{{ path('app_blog_index_paginated', {'page': page+1}) }}">Newer &rarr;</a></li>
+        {% else %}
+            <li class="next disabled"><a href="">Newer &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endblock %}

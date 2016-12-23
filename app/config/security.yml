@@ -1,0 +1,32 @@
+security:
+    providers:
+        in_memory:
+            memory:
+                users:
+                    jedy:
+                        password: 1234
+                        roles: 'ROLE_ADMIN'
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        secured_area:
+            pattern: ^/
+            provider: in_memory
+            anonymous: ~
+            guard:
+                authenticators:
+                    - app.form_login_authenticator
+            logout:
+                path: logout_route
+                target: app_index
+            
+
+    access_control:
+        - { path: ^/(%app_locales%)/admin/login,   roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(%app_locales%)/admin/, roles: ROLE_ADMIN }

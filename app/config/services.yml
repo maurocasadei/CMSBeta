@@ -1,0 +1,77 @@
+services:
+   locales:
+       class: AppBundle\Util\Locales
+       arguments: [%locale_active%, %app_locales%, "@session"]
+
+   app.locale :
+       class: AppBundle\EventListener\LocaleListener
+       tags:
+           - { name: kernel.event_subscriber }
+
+   app.redirect_to_locale_active:
+       class: AppBundle\EventListener\RedirectToLocaleActiveListener
+       arguments: ["@router", "%locale_active%"]
+       tags:
+           - { name: kernel.event_subscriber }
+
+   app_admin.twig.extension:
+       class: AppBundle\Twig\AppAdminExtension
+       arguments: ["@doctrine.orm.default_entity_manager", "@assets.packages", "%uploads_directory_name%"]
+       tags:
+           - { name: twig.extension }
+
+   app_public.twig.extension:
+          class: AppBundle\Twig\AppPublicExtension
+          arguments: ["@locales", "@router", "@session", "@doctrine.orm.default_entity_manager"]
+          tags:
+              - { name: twig.extension }
+
+   app.form.category:
+       class: AppBundle\Form\CategoryForm
+       arguments: ["@doctrine.orm.default_entity_manager", %locale_active%]
+       tags:
+           - { name: form.type }
+
+   app.form.content:
+       class: AppBundle\Form\ContentForm
+       arguments: ["@doctrine.orm.default_entity_manager", %locale_active%]
+       tags:
+           - { name: form.type }
+
+   app.validator.has_translation_parent:
+       class: AppBundle\Validator\Constraints\HasTranslationParentValidator
+       arguments: ["@doctrine.orm.default_entity_manager", "@locales"]
+       tags:
+           - { name: validator.constraint_validator, alias: has_translation_parent }
+
+   app.setter_content_category:
+       class: AppBundle\EventListener\SetterListener
+       arguments: ["@cocur_slugify"]
+       tags:
+           - { name: doctrine.event_subscriber }
+
+   twig.intl_extension:
+       public: false
+       class:  Twig_Extensions_Extension_Intl
+       tags:
+           - { name: twig.extension }
+
+   pagination:
+       class: AppBundle\Util\Pagination
+       arguments: ["@doctrine.orm.default_entity_manager"]
+
+   app.form_login_authenticator:
+       class: AppBundle\Security\FormLoginAuthenticator
+       arguments: ["@security.password_encoder", "@router"]
+
+   app.form.macrocategorieMag:
+       class: AppBundle\Form\MacrocategorieMagForm
+       arguments: ["@doctrine.orm.default_entity_manager", %locale_active%]
+       tags:
+           - { name: form.type }
+
+#  app.listener.command_exception:
+#        class: AppBundle\EventListener\ConsoleExceptionListener
+#        arguments: ['@logger']
+#        tags:
+#            - { name: kernel.event_listener, event: console.exception }       

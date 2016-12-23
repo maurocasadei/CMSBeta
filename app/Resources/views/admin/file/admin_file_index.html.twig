@@ -1,0 +1,64 @@
+{% extends ':admin:base_admin.html.twig' %}
+
+{% block title %} {{ 'file.title.plural'|trans }} {% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{{ path('admin_home') }}">Home</a></li>
+        <li class="active">{{ 'file.title.plural'|trans }}</li>
+    </ul>
+
+    {% include 'admin/_flashbag.html.twig' %}
+
+    <div class="row margin-vertical-md">
+        <div class="col-md-8">
+            <h1 class="h-btn-line">{{ 'file.title.plural'|trans }}</h1>
+        </div>
+        <div class="col-md-4 text-right">
+            <a href="{{ path('admin_file_upload') }}" class="btn btn-primary btn-sm">{{ 'file.add'|trans }}</a>
+        </div>
+    </div>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>{{ 'file.name'|trans }}</th>
+            <th>{{ 'file.view'|trans }}</th>
+            <th>{{ 'file.details'|trans }}</th>
+            <th>{{ 'app.actions'|trans }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in files %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><span class="label label-info">{{ item.filename }}</span></td>
+                <td>
+                    {{ render_file(item.filename, item.extension) }}
+                </td>
+                <td><i class="fa fa-clock-o"></i> {{ item.cTime | date("d/m/Y H:I") }}</td>
+                <td class="text-right">
+                    <a class="btn btn-danger btn-md" href="{{ path('admin_file_delete', {'filename': item.filename }) }}"> <i class="fa fa-trash"></i> </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="pager">
+        {% set prev = page -1  %}
+
+        {% if prev != 0 %}
+            <li class="previous"><a href="{{ path('admin_file_home_page', {'page': prev}) }}">&larr; {{ 'app.pagination.older'|trans }}</a></li>
+        {% else %}
+            <li class="previous disabled"><a href="">&larr; {{ 'app.pagination.older'|trans }}</a></li>
+        {% endif %}
+
+        {% if totalPages >= (page+1) %}
+            <li class="next"><a href="{{ path('admin_file_home_page', {'page': page+1}) }}">{{ 'app.pagination.newer'|trans }} &rarr;</a></li>
+        {% else %}
+            <li class="next disabled"><a href="">{{ 'app.pagination.newer'|trans }} &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endblock %}

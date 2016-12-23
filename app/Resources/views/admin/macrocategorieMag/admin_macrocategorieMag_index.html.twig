@@ -1,0 +1,74 @@
+{% extends ':admin:base_admin.html.twig' %}
+
+{% block title %} {{ 'macrocategorieMag.title.plural'|trans }} {% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{{ path('admin_home') }}">Home</a></li>
+        <li class="active">{{ 'macrocategorieMag.title.plural'|trans }}</li>
+    </ul>
+
+    {% include 'admin/_flashbag.html.twig' %}
+
+    <div class="row margin-vertical-md">
+        <div class="col-md-8">
+            <h1 class="h-btn-line">{{ 'macrocategorieMag.title.plural'|trans }}</h1>
+        </div>
+        <div class="col-md-4 text-right">
+            <a href="{{ path('admin_macrocategorieMag_new') }}" class="btn btn-primary btn-sm">{{ 'macrocategorieMag.add'|trans }}</a>
+        </div>
+    </div>
+	
+    <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>{{ 'macrocategorieMag.name'|trans }}</th>
+            <th>{{ 'macrocategorieMag.parent'|trans }}</th>
+            {#
+            <th>{{ 'app.actions'|trans }}</th>
+             #} 
+            {% for translation in translations %}
+                <th>{{ translation.name }}</th>
+            {% endfor %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for macrocategorieMag in categories %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ macrocategorieMag.name}}</td>
+                <td>{{ macrocategorieMag.parent.name |default('-')}}</td>
+                {# 
+                <td>
+                    <a href="{{ path('admin_macrocategorieMag_edit', {'id': macrocategorieMag.id}) }}" class="btn btn-warning btn-xs">{{ 'app.edit'|trans }}</a>
+                    <a href="{{ path('admin_macrocategorieMag_translations', {'id': macrocategorieMag.id}) }}" class="btn btn-info btn-xs">{{ 'app.translation'|trans }}</a>
+                     
+                </td>
+                #} 
+                {% for translation in translations %}
+                        <td>
+                            {% if macrocategorieMag.locale == translation.code %}
+                                <a href="{{ path('admin_macrocategorieMag_edit', {'id': macrocategorieMag.id}) }}" class="btn btn-warning btn-xs">{{ 'macrocategorieMag.edit'|trans }}</a>
+                            {% else %}
+                                {% set macrocategorieMag_translation = is_macrocategorieMag_translation(macrocategorieMag.locale, translation.code, macrocategorieMag.id) %}
+        
+                                {% if macrocategorieMag_translation %}
+                                    <a href="{{ path('admin_macrocategorieMag_translation_edit', {'idParent': macrocategorieMag.id, 'id': macrocategorieMag_translation.id, 'localeMacrocategorieMag': macrocategorieMag.locale, 'localeTranslation': translation.code} ) }}" class="btn btn-warning btn-xs">{{ 'app.translation.edit'|trans }}</a>
+                                {% else %}
+                                    <a href="{{ path('admin_macrocategorieMag_translation_add', {'id': macrocategorieMag.id, 'localeMacrocategorieMag': macrocategorieMag.locale, 'localeTranslation': translation.code} ) }}" class="btn btn-info btn-xs">{{ 'app.translation.add'|trans }}</a>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                {% endfor %}
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+	<div class="navigation">
+		{{ knp_pagination_render(categories) }}
+	</div>
+{% endblock %}
+

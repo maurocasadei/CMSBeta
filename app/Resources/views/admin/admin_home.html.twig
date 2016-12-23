@@ -1,0 +1,44 @@
+{% extends ':admin:base_admin.html.twig' %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h1>{{ 'app.welcome'|trans }}</h1>
+        <p>{{ 'app.description'|trans()|raw }}</p>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ 'content.type.page'|trans }} <span class="badge"><i class="fa fa-eye"></i> {{ count.page }}</span></h3>
+                </div>
+                <div class="panel-body">
+                    {{ 'content.definition.page'|trans }}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ 'content.type.post'|trans }} <span class="badge"><i class="fa fa-eye"></i> {{ count.post }}</span></h3>
+                </div>
+                <div class="panel-body">
+                   {{ 'content.definition.post'|trans }}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ 'category.title.singular'|trans }} <span class="badge"><i class="fa fa-eye"></i> {{ count.category }}</span></h3>
+                </div>
+                <div class="panel-body">
+                    {{ 'category.definition'|trans }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

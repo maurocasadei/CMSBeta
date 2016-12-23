@@ -1,0 +1,39 @@
+{% extends ':admin:base_admin.html.twig' %}
+
+{% block title %} {{ 'macrocategorieMag.add'|trans }} {% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{{ path('admin_home') }}">Home</a></li>
+        <li><a href="{{ path('admin_macrocategorieMag_home') }}">{{ 'macrocategorieMag.title.plural'|trans }}</a></li>
+        {% if form.vars.data.locale != locales.getLocaleActive %}
+            <li><a href="{{ path('admin_macrocategorieMag_edit', {'id':form.vars.value.parentMultilangue.id }) }}">{{ form.vars.value.parentMultilangue.name }}</a></li>
+            <li><a href="{{ path('admin_macrocategorieMag_translations', {'id':form.vars.value.parentMultilangue.id }) }}">{{ 'app.translation'|trans }}</a></li>
+        {% endif %}
+        <li class="active">{{ 'macrocategorieMag.translation.add'|trans }}</li>
+    </ul>
+
+    <div class="row margin-vertical-md">
+        <div class="col-md-12">
+            <h1 class="h-btn-line">
+                {% if form.vars.data.locale != locales.getLocaleActive %}
+                    {{ 'macrocategorieMag.translation.add'|trans }}
+                {% else %}
+                    {{ 'macrocategorieMag.add'|trans }}
+                {% endif %}
+            </h1>
+        </div>
+    </div>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">
+            {% if form.vars.data.locale != locales.getLocaleActive %}
+                {{ 'macrocategorieMag.translation.add'|trans }}
+            {% else %}
+                {{ 'macrocategorieMag.add'|trans }}
+            {% endif %}
+        </button>
+    {{ form_end(form) }}
+
+{% endblock %}
